@@ -160,7 +160,7 @@ private:
   float saveLeft = 0;
   float saveRight = 0;
 public:
-  MidiModularPatch() : voltsIn(true), voltsOut(false) {
+  MidiModularPatch() : voltsIn(false), voltsOut(false) {
     osc.setSampleRate(getSampleRate());
     fm = FloatArray::create(getBlockSize());
     registerParameter(PARAMETER_A, "Modulation");
