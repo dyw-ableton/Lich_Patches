@@ -235,14 +235,14 @@ public:
     }
 
     // MIDI to CV
-    in.freq = voltsOut.noteToHertz(in.note - ROOT_NOTE_OFFSET);
-    float value = voltsOut.getSample(in.freq);
-    left.ramp(saveLeft, value);
-    saveLeft = value;
-    right.ramp(saveRight, in.pitchbend);
-    saveRight = in.pitchbend;
-    setParameterValue(PARAMETER_F, in.modulation/127.0f);
-    setParameterValue(PARAMETER_G, in.expression/127.0f);
+   // in.freq = voltsOut.noteToHertz(in.note - ROOT_NOTE_OFFSET);
+    //float value = voltsOut.getSample(in.freq);
+    //left.ramp(saveLeft, value);
+   // saveLeft = value;
+   // right.ramp(saveRight, in.pitchbend);
+   // saveRight = in.pitchbend;
+   // setParameterValue(PARAMETER_F, in.modulation/127.0f);
+   // setParameterValue(PARAMETER_G, in.expression/127.0f);
     if(in.velocity)
       setButton(PUSHBUTTON, 4095, 0);      
     else
