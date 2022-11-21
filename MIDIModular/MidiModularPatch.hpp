@@ -161,8 +161,8 @@ private:
   float saveRight = 0;
 public:
   MidiModularPatch() : voltsIn(false), voltsOut(false) {
-    osc.setSampleRate(getSampleRate());
-    fm = FloatArray::create(getBlockSize());
+   // osc.setSampleRate(getSampleRate());
+   // fm = FloatArray::create(getBlockSize());
     registerParameter(PARAMETER_A, "Modulation");
     registerParameter(PARAMETER_B, "Expression");
     //registerParameter(PARAMETER_C, "FM Freq");
