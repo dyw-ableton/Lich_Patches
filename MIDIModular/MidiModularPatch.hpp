@@ -151,8 +151,8 @@ public:
 
 class MidiModularPatch : public Patch {
 private:
-  SineOscillator osc;
-  FloatArray fm;
+ // SineOscillator osc;
+//  FloatArray fm;
   VoltsPerOctave voltsOut;
   VoltsPerOctave voltsIn;
   State in;
@@ -165,8 +165,8 @@ public:
     fm = FloatArray::create(getBlockSize());
     registerParameter(PARAMETER_A, "Modulation");
     registerParameter(PARAMETER_B, "Expression");
-    registerParameter(PARAMETER_C, "FM Freq");
-    registerParameter(PARAMETER_D, "FM Amount");
+    //registerParameter(PARAMETER_C, "FM Freq");
+    //registerParameter(PARAMETER_D, "FM Amount");
     registerParameter(PARAMETER_F, "Modulation>");
     registerParameter(PARAMETER_G, "Expression>");
   }
@@ -249,10 +249,10 @@ public:
       setButton(PUSHBUTTON, 0, 0);
 
     // add a little oscillation
-    osc.setFrequency(voltsOut.noteToHertz(in.note+round(getParameterValue(PARAMETER_C)*24)-12));
-    osc.getSamples(fm);
-    fm.multiply(getParameterValue(PARAMETER_D)*0.2);
-    left.add(fm);
+    //osc.setFrequency(voltsOut.noteToHertz(in.note+round(getParameterValue(PARAMETER_C)*24)-12));
+    //osc.getSamples(fm);
+   // fm.multiply(getParameterValue(PARAMETER_D)*0.2);
+    //left.add(fm);
   }
 };
 
